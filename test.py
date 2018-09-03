@@ -1,3 +1,4 @@
+#!/bin/env python
 from scheduler import schedule
 
 # NODE_ID -> SLOT1, SLOT2
@@ -88,10 +89,10 @@ CHUNKS = {
     63 : [6, 7, 0]
     }
 
-schedule(NODES, SLOTS, CHUNKS)
+schedule(SLOTS, CHUNKS)
 
 print("Scheduling the following chunks:\n\n{}\n".format(CHUNKS.keys()))
 
 print("\nLogical block dist:\n")
-for key in SLOTS.keys():
+for key in SLOTS:
   print("SLOT {} -> {}".format(key, list(reversed(SLOTS[key]))))
