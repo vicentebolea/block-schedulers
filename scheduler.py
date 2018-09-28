@@ -22,7 +22,7 @@ def assign_chunks_to_slots(SLOTS, CHUNKS):
 
 # Split the file chunks in each wave
 def schedule(SLOTS, CHUNKS):
-  if len(CHUNKS)/len(SLOTS) * CHUNK_SIZE < MIN_BLOCK_SIZE:
+  if float(len(CHUNKS)/len(SLOTS)) * CHUNK_SIZE < MIN_BLOCK_SIZE:
     return False
 
   C_1, C_2 = split_chunks(CHUNKS)
